@@ -19,6 +19,36 @@ router.get('/ten', function(req, res, next) {
 router.get('/1', function(req, res, next) {
  res.send(vett[1]);
 });
+router.get('/2', function(req, res, next) {
+ res.send(vett[2]);
+});
+router.get('/3', function(req, res, next) {
+ res.send(vett[3]);
+});
+router.get('/4', function(req, res, next) {
+ res.send(vett[4]);
+});
+router.get('/5', function(req, res, next) {
+ res.send(vett[5]);
+});
+router.get('/6', function(req, res, next) {
+ res.send(vett[6]);
+});
+router.get('/6', function(req, res, next) {
+ res.send(vett[6]);
+});
+router.get('/7', function(req, res, next) {
+ res.send(vett[7]);
+});
+router.get('/8', function(req, res, next) {
+ res.send(vett[8]);
+});
+router.get('/9', function(req, res, next) {
+ res.send(vett[9]);
+});
+router.get('/10', function(req, res, next) {
+ res.send(vett[10]);
+});
 
 function createFakePerson()
 {
