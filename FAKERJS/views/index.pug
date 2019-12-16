@@ -1,3 +1,11 @@
-extends layout
-each v in vett
-    h1 vett.name
+doctype html
+html
+    head
+        link(rel='stylesheet', href='/css/style.css')
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+    body
+        each poet in poeti
+            div
+                h1 #{poet.nome}
+                img(src = `${poet.immagine}`)
+    
