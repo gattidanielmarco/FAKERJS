@@ -3,72 +3,22 @@ var router = express.Router();
 var faker = require('faker');
 let vett = new Array();
 const fs = require('fs');
-
+const poeti = require('../vettPoeti');
 /* GET users listing. */
 router.get('/', function (req, res, next) {
     res.send(createFakePerson());
 });
 
-router.get('/ten', function (req, res, next) {
-    poeti = new Array();
-    for (let i = 0; i < 10; i++) {
-        oggetto = {
-            id: i,
-            nome: faker.name.firstName(),
-            cognome: faker.name.lastName(),
-            email: faker.internet.email(),
-            card: faker.helpers.createCard(),
-            immagine: faker.image.people(),
-            sitoWeb: faker.internet.url(),
-            nazionalita: faker.address.country(),
-            poesie: [
-                faker.lorem.paragraph(),
-                faker.lorem.paragraph(),
-                faker.lorem.paragraph()
-            ]
-        }
-        poeti.push(oggetto);
-    }
-    console.log(poeti);
-    let data = JSON.stringify(poeti);
-    fs.writeFileSync("vettPoeti.json", data);
-    res.send(data);
+router.get('/profile', (req, res) => {
+    
+    const r = poeti.find(p => p.id == req.query.id);
+    console.log(r);
+    res.render('profile', {title : `About ${r.nome}`, r}); // l è il nome del file
+
+    
 });
 
 
-router.get('/1', function (req, res, next) {
-    res.send(vett[1]);
-});
-router.get('/2', function (req, res, next) {
-    res.send(vett[2]);
-});
-router.get('/3', function (req, res, next) {
-    res.send(vett[3]);
-});
-router.get('/4', function (req, res, next) {
-    res.send(vett[4]);
-});
-router.get('/5', function (req, res, next) {
-    res.send(vett[5]);
-});
-router.get('/6', function (req, res, next) {
-    res.send(vett[6]);
-});
-router.get('/6', function (req, res, next) {
-    res.send(vett[6]);
-});
-router.get('/7', function (req, res, next) {
-    res.send(vett[7]);
-});
-router.get('/8', function (req, res, next) {
-    res.send(vett[8]);
-});
-router.get('/9', function (req, res, next) {
-    res.send(vett[9]);
-});
-router.get('/10', function (req, res, next) {
-    res.send(vett[10]);
-});
 
 function createFakePerson() {
     let randomName = faker.name.findName(); // Rowan Nikolaus

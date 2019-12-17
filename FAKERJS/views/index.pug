@@ -6,6 +6,8 @@ html
     body
         each poet in poeti
             div
-                h1 #{poet.nome}
-                img(src = `${poet.immagine}`)
+                
+                a(href=`/users/profile?id=${poet.id}`)
+                    h1 #{poet.nome}
+                    img(src = `${poet.immagine}`)
     
