@@ -1,0 +1,6 @@
+.style {
+background: rgb(206, 55, 168);
+background: -moz-linear-gradient(left, rgb(206, 55, 55) 0%, #1C6EA4 60%, rgb(100, 197, 55) 100%);
+background: -webkit-linear-gradient(left, rgb(206, 55, 55) 0%, #1C6EA4 60%, rgb(100, 197, 55) 100%);
+background: linear-gradient(to right, rgb(206, 55, 55) 0%, #1C6EA4 60%, rgb(100, 197, 55) 100%);
+}
